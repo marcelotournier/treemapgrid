@@ -55,19 +55,24 @@ If you want to investigate better the charts, an option is zooming this page, or
 
 ```{r}
 vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
+svg('plot1.svg', width = 16, height = 9)
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(2, 2)))
 treemap(storm,index="STATE",vSize="FATALITIES",vColor="FATALITIES",type="value",title = "Fatalities across US States", palette="RdGy",force.print.labels = TRUE,vp = vplayout(1,1))
 treemap(storm,index="STATE",vSize="INJURIES",vColor="INJURIES",type="value",title = "Injuries across US States",palette="PRGn",force.print.labels = TRUE,vp = vplayout(1,2))
 treemap(events,index="EVTYPE",vSize="Fatalities",vColor="Fatalities",type="value",title = "Fatalities by Weather Events", palette="RdPu",force.print.labels = TRUE,vp = vplayout(2,1))
 treemap(events,index="EVTYPE",vSize="Injuries",vColor="Injuries",type="value",title = "Injuries by Weather Events",palette="RdBu",force.print.labels = TRUE,vp = vplayout(2,2))
+dev.off()
 ```
 
 ```{r}
+vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
+svg('plot1.svg', width = 16, height = 9)
 grid.newpage()
 pushViewport(viewport(layout = grid.layout(2, 2)))
 treemap(storm,index="STATE",vSize="PROPDMG",vColor="PROPDMG",type="value",title = "Property dmg across States", palette="PuRd",force.print.labels = TRUE,vp = vplayout(1,1))
 treemap(storm,index="STATE",vSize="CROPDMG",vColor="CROPDMG",type="value",title = "Crops dmg across States", palette="BuGn",force.print.labels = TRUE,vp = vplayout(1,2))
 treemap(economic,index="EVTYPE",vSize="PROPDMG",vColor="PROPDMG",type="value",title = "Property dmg by Events", palette="GnBu",force.print.labels = TRUE,vp = vplayout(2,1))
 treemap(economic,index="EVTYPE",vSize="CROPDMG",vColor="CROPDMG",type="value",title = "Crops dmg by Events",palette="YlGn",force.print.labels = TRUE,vp = vplayout(2,2))
+dev.off()
 ```
