@@ -51,7 +51,7 @@ To turn the data more visually atractive, I set two sets of treemaps from "treem
 
 Each set is composed by four treemaps, to show how the impacts are distributed across the United States, and to show which are the most frequent events generating the impacts in health or economic impacts.  To put the treemaps together, the package "grid" was used.
 
-If you want to investigate better the charts, an option is zooming this page, or using the script below in R, with output to svg. svg files are excelent for zooming capacity, to a more thorough analysis:
+If you want to investigate better the charts, an option is looking at "plot1.svg" and "plot2.svg" in this repo, zooming the pages to better explore the data, or using these scripts in R and generating your own files.  The full script is in "grid_treemaps.R", in this repo.
 
 ```{r}
 vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
